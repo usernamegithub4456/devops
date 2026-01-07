@@ -39,16 +39,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: test  # ✅ ce job s'exécute seulement si 'test' réussit
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Run deploy script
+      - name: Deploy application 
         run: |
-          ENV=${{ github.event.inputs.env }}
+     
           echo "Déploiement vers l'environnement $ENV..."
-
-          # Exemple : adapter avec ton serveur réel
-          # scp -r ./app.py user@server:/path/to/$ENV/
-          # ssh user@server "systemctl restart myapp-$ENV"
-
-          echo "Déploiement terminé."
