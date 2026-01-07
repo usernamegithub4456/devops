@@ -31,3 +31,11 @@ jobs:
       - name: Run tests with pytest
         run: |
           pytest
+
+            # 5️⃣ Upload test report
+      - name: Upload test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: pytest-report
+          path: report.xml
+
