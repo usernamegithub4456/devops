@@ -65,13 +65,15 @@ jobs:
         with:
           server_address: smtp@gmail.com
           server_port: 465
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_PASSWORD }}
  
 
           subject: >
             [${{ needs.test.result }}] ${{ github.repository }}
 
           from: ouelhazifir@gmail.com
-          to: a@gmail.com
+          to: ouelhazifir@gmail.com
   
 
           body: |
